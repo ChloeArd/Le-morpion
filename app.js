@@ -27,14 +27,14 @@ for (let i = 0; i < allDiv.length; i++) {
         if(winner !== false) {
             alert(winner);
         }
-        else {
+        else { // fonctionne pas correctement !!!!!!!!!!!!!!!!
             verificationHorizontale();
             verificationDiagonale();
+            console.log("horizontale ou diagonale")
         }
 
     })
 }
-
 
 /**
  * Crée un élément avec le bon fond lorsque le joueur 1 utilise le clic gauche.
@@ -140,22 +140,19 @@ function verificationVerticale() {
 
 // Ensuite on teste les lignes horizontales.
 function verificationHorizontale() {
-    let caseLigne1 = ligne1.getElementsByClassName("case1");
-    let caseLigne2 = ligne2.getElementsByClassName("case1");
-    let caseLigne3 = ligne3.getElementsByClassName("case1");
+    let case1 = document.getElementsByClassName("case1");
     let player1Count = 0;
     let player2Count = 0;
 
     // Ligne 1 horizontale
-    for (let i = 0; i < caseLigne1.length && i < caseLigne2.length && i < caseLigne3.length; i++) {
-        let elementsP1 = caseLigne1.item(i).getElementsByTagName("p");
-        let elementsP2 = caseLigne2.item(i).getElementsByTagName("p");
-        let elementsP3 = caseLigne3.item(i).getElementsByTagName("p");
-        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
-            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+    for (let i = 0; i < case1.length; i++) {
+        let elementsP1 = case1.item(i).getElementsByTagName("p");
+        if (elementsP1.length > 0) {
+            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 ) {
                 player1Count++;
+                console.log("J'ai cliquer sur une case1");
             }
-            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2) {
                 player2Count++;
             }
             if (player1Count === 3) {
@@ -167,22 +164,18 @@ function verificationHorizontale() {
         }
     }
 
-    let case2Ligne1 = ligne1.getElementsByClassName("case2");
-    let case2Ligne2 = ligne2.getElementsByClassName("case2");
-    let case2Ligne3 = ligne3.getElementsByClassName("case2");
+    let case2 = document.getElementsByClassName("case2");
     player1Count = 0;
     player2Count = 0;
 
     // Ligne 2 horizontale
-    for (let i = 0; i < case2Ligne1.length && i < case2Ligne2.length && i < case2Ligne3.length; i++) {
-        let elementsP1 = case2Ligne1.item(i).getElementsByTagName("p");
-        let elementsP2 = case2Ligne2.item(i).getElementsByTagName("p");
-        let elementsP3 = case2Ligne3.item(i).getElementsByTagName("p");
-        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
-            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+    for (let i = 0; i < case2.length; i++) {
+        let elementsP2 = case2.item(i).getElementsByTagName("p");
+        if (elementsP2.length > 0) {
+            if(elementsP2.item(0).style.backgroundColor === bgPlayer1) {
                 player1Count++;
             }
-            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+            else if (elementsP2.item(0).style.backgroundColor === bgPlayer2) {
                 player2Count++;
             }
             if (player1Count === 3) {
@@ -194,22 +187,18 @@ function verificationHorizontale() {
         }
     }
 
-    let case3Ligne1 = ligne1.getElementsByClassName("case3");
-    let case3Ligne2 = ligne2.getElementsByClassName("case3");
-    let case3Ligne3 = ligne3.getElementsByClassName("case3");
+    let case3 = document.getElementsByClassName("case3");
     player1Count = 0;
     player2Count = 0;
 
     // Ligne 3 horizontale
-    for (let i = 0; i < case3Ligne1.length && i < case3Ligne2.length && i < case3Ligne3.length; i++) {
-        let elementsP1 = case3Ligne1.item(i).getElementsByTagName("p");
-        let elementsP2 = case3Ligne2.item(i).getElementsByTagName("p");
-        let elementsP3 = case3Ligne3.item(i).getElementsByTagName("p");
-        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
-            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+    for (let i = 0; i < case3.length; i++) {
+        let elementsP3 = case3.item(i).getElementsByTagName("p");
+        if (elementsP3.length > 0) {
+            if(elementsP3.item(0).style.backgroundColor === bgPlayer1) {
                 player1Count++;
             }
-            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+            else if (elementsP3.item(0).style.backgroundColor === bgPlayer2) {
                 player2Count++;
             }
             if (player1Count === 3) {
@@ -257,13 +246,14 @@ function verificationDiagonale() {
         }
     }
 
+    //Diagonale de bas-gauche à haut-droite.
     let case3Ligne1 = ligne1.getElementsByClassName("case3");
     let case2Ligne2 = ligne2.getElementsByClassName("case2");
     let case1Ligne3 = ligne3.getElementsByClassName("case1");
     player1Count = 0;
     player2Count = 0;
 
-    // Ligne 2 horizontale
+    // 2è diagonale
     for (let i = 0; i < case3Ligne1.length && i < case2Ligne2.length && i < case1Ligne3.length; i++) {
         let elementsP1 = case3Ligne1.item(i).getElementsByTagName("p");
         let elementsP2 = case2Ligne2.item(i).getElementsByTagName("p");
