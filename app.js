@@ -35,8 +35,6 @@ for (let i = 0; i < allDiv.length; i++) {
         if (winnerD !== false) { //renvoie le joueur qui a gagné en réunissant ses cercles à la diagonale
             alert(winnerD);
         }
-
-
     })
 }
 
@@ -86,10 +84,10 @@ function verificationVerticale() {
             }
             // Ensuite, on vérifie si un des deux dispose de 3 cases.
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2! ";
             }
         }
     }
@@ -108,11 +106,11 @@ function verificationVerticale() {
             else if (elementsP.item(0).style.backgroundColor === bgPlayer2) {
                 player2Count++;
             }
-            if(player1Count === 3) {
-                return "Gagnant: joueur 1"; //Sort de la fonction si joueur 1 a gagné
+            if (player1Count === 3) {
+                return "Bravo joueur 1 !"; //Sort de la fonction si joueur 1 à gagné
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2! ";
             }
         }
     }
@@ -132,10 +130,10 @@ function verificationVerticale() {
                 player2Count++;
             }
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2! ";
             }
         }
     }
@@ -160,10 +158,10 @@ function verificationHorizontale() {
                 player2Count++;
             }
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2! ";
             }
         }
     }
@@ -183,10 +181,10 @@ function verificationHorizontale() {
                 player2Count++;
             }
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2! ";
             }
         }
     }
@@ -206,10 +204,10 @@ function verificationHorizontale() {
                 player2Count++;
             }
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2! ";
             }
         }
     }
@@ -239,10 +237,10 @@ function verificationDiagonale() {
                 player2Count++;
             }
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2 !";
             }
         }
     }
@@ -267,10 +265,10 @@ function verificationDiagonale() {
                 player2Count++;
             }
             if (player1Count === 3) {
-                return "Gagnant: joueur 1";
+                return "Bravo joueur 1 !";
             }
             else if (player2Count === 3) {
-                return "Gagnant: joueur 2";
+                return "Bravo joueur 2 !";
             }
         }
     }
