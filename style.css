@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    background-color: lightgrey;
+    width: 70%;
+    margin: auto;
+    padding: 30px;
+}
+
+h1 {
+    background-color: #FFDB13;
+    width: 20%;
+    border: 3px solid black;
+    display: flex;
+    margin-left: 40%;
+    padding-left: 50px;
+    margin-bottom: 50px;
+}
+
+h2 {
+    color: #FF7E13;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 14px;
+}
+
+#text {
+    margin-bottom: 80px;
+}
+
+#play {
+    display: flex;
+    align-items: center;
+}
+
+#player1, #player2 {
+    color: #2696E3;
+    width: 30%;
+    text-align: center;
+}
+
+#player2 {
+    color: #FE1616;
+}
+
+.espace {
+    margin-bottom: 10px;
+}
+
+#circleBlue1, #circleBlue2, #circleBlue3, #circleBlue4, #circleBlue5, #circleRed1, #circleRed2, #circleRed3, #circleRed4, #circleRed5 {
+    height: 70px;
+    width: 70px;
+    border-radius: 70px;
+    background-color: #2696E3;
+    display: inline-block;
+    margin-left: 10px;
+}
+
+#circleRed1, #circleRed2, #circleRed3, #circleRed4, #circleRed5 {
+    background-color: #FE1616;
+    ;
+}
+
+#morpion {
+    width: 38%;
+    margin-left: 50px;
+}
+
+button {
+    background-color: #444444;
+    margin: 0;
+    width: 100px;
+    height: 100px;
+}
+
