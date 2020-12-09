@@ -86,11 +86,16 @@ p {
     margin-left: 50px;
 }
 
-button {
+.case1, .case2, .case3 {
     background-color: #444444;
     margin: 0;
     width: 100px;
     height: 100px;
+    border: 2px solid black;
+}
+
+#ligne1, #ligne2, #ligne3 {
+    display: inline-block;
 }
 
 #reset {
