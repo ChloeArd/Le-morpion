@@ -27,11 +27,15 @@ for (let i = 0; i < allDiv.length; i++) {
         if(winner !== false) {
             alert(winner);
         }
-        else { // fonctionne pas correctement !!!!!!!!!!!!!!!!
-            verificationHorizontale();
-            verificationDiagonale();
-            console.log("horizontale ou diagonale")
+        let winnerH = verificationHorizontale();
+        if ( winnerH !== false) {
+            alert(winnerH);
         }
+        let winnerD = verificationDiagonale();
+        if (winnerD !== false) {
+            alert(winnerD);
+        }
+
 
     })
 }
