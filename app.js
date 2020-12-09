@@ -80,10 +80,10 @@ function verificationVerticale() {
             }
             // Ensuite, on vérifie si un des deux dispose de 3 cases.
             if (player1Count === 3) {
-                return "player 1";
+                return "Gagnant: joueur 1";
             }
             else if (player2Count === 3) {
-                return "player 2";
+                return "Gagnant: joueur 2";
             }
         }
     }
@@ -93,7 +93,7 @@ function verificationVerticale() {
     player1Count = 0;
     player2Count = 0;
 
-    for (let i = 0; i<  casesLigne2.length; i++) {
+    for (let i = 0; i < casesLigne2.length; i++) {
         let elementsP = casesLigne2.item(i).getElementsByTagName("p");
         if(elementsP.length > 0) {
             if(elementsP.item(0).style.backgroundColor === bgPlayer1) {
@@ -103,16 +103,36 @@ function verificationVerticale() {
                 player2Count++;
             }
             if(player1Count === 3) {
-                return "player 1"; //Sort de la fonction si joueur 1 a gagné
+                return "Gagnant: joueur 1"; //Sort de la fonction si joueur 1 a gagné
             }
             else if (player2Count === 3) {
-                return "player2";
+                return "Gagnant: joueur 2";
             }
         }
     }
 
+    //Ligne 3 verticale
+    let caseLigne3 = ligne3.getElementsByTagName("div");
+    player1Count = 0;
+    player2Count = 0;
 
-
+    for (let i = 0; i < caseLigne3.length; i++) {
+        let elementsP = caseLigne3.item(i).getElementsByTagName("p");
+        if (elementsP.length > 0) {
+            if(elementsP.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if (player1Count === 3) {
+                return "Gagnant: joueur 1";
+            }
+            else if (player2Count === 3) {
+                return "Gagnant: joueur 2";
+            }
+        }
+    }
     return false;
 }
 
