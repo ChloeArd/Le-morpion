@@ -25,14 +25,14 @@ for (let i = 0; i < allDiv.length; i++) {
         }
         let winner = verificationVerticale();
         if(winner !== false) {
-            alert(winner);
+            alert(winner); //renvoie le joueur qui a gagné en réunissant ses cercles à la verticale
         }
         let winnerH = verificationHorizontale();
-        if ( winnerH !== false) {
+        if ( winnerH !== false) { //renvoie le joueur qui a gagné en réunissant ses cercles à l'horizontale
             alert(winnerH);
         }
         let winnerD = verificationDiagonale();
-        if (winnerD !== false) {
+        if (winnerD !== false) { //renvoie le joueur qui a gagné en réunissant ses cercles à la diagonale
             alert(winnerD);
         }
 
@@ -213,11 +213,8 @@ function verificationHorizontale() {
             }
         }
     }
-
     return false;
 }
-
-
 
 // Et en fin on teste les lignes diagonales.
 function verificationDiagonale() {
