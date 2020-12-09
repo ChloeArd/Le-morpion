@@ -10,14 +10,16 @@ document.addEventListener("contextmenu", function (event) {
     event.preventDefault();
 })
 
+//Faire que le joueur 1 joue avec le clique gauche de la souris et qu'un cerlce bleu apparaisse la où il a cliqué.
+// Aussi faire que le joueur 2 joue avec le clique droit de la souris et q'un cerlce rouge apparaisse là où il a cliqué.
 let allDiv = document.querySelectorAll('.case1, .case2, .case3');
 for (let i = 0; i < allDiv.length; i++) {
     allDiv.item(i).addEventListener("mouseup", function (event) {
         switch(event.button) {
-            case 0:
-                playerOneClick(allDiv.item(i));
+            case 0: //Clique gauche
+                playerOneClick(allDiv.item(i)); // reviens à --> this.
                 break;
-            case 2:
+            case 2: //Clique droit
                 playerTwoClick(this);
                 break;
         }
@@ -138,11 +140,149 @@ function verificationVerticale() {
 
 // Ensuite on teste les lignes horizontales.
 function verificationHorizontale() {
+    let caseLigne1 = ligne1.getElementsByClassName("case1");
+    let caseLigne2 = ligne2.getElementsByClassName("case1");
+    let caseLigne3 = ligne3.getElementsByClassName("case1");
+    let player1Count = 0;
+    let player2Count = 0;
 
+    // Ligne 1 horizontale
+    for (let i = 0; i < caseLigne1.length && i < caseLigne2.length && i < caseLigne3.length; i++) {
+        let elementsP1 = caseLigne1.item(i).getElementsByTagName("p");
+        let elementsP2 = caseLigne2.item(i).getElementsByTagName("p");
+        let elementsP3 = caseLigne3.item(i).getElementsByTagName("p");
+        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
+            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if (player1Count === 3) {
+                return "Gagnant: joueur 1";
+            }
+            else if (player2Count === 3) {
+                return "Gagnant: joueur 2";
+            }
+        }
+    }
+
+    let case2Ligne1 = ligne1.getElementsByClassName("case2");
+    let case2Ligne2 = ligne2.getElementsByClassName("case2");
+    let case2Ligne3 = ligne3.getElementsByClassName("case2");
+    player1Count = 0;
+    player2Count = 0;
+
+    // Ligne 2 horizontale
+    for (let i = 0; i < case2Ligne1.length && i < case2Ligne2.length && i < case2Ligne3.length; i++) {
+        let elementsP1 = case2Ligne1.item(i).getElementsByTagName("p");
+        let elementsP2 = case2Ligne2.item(i).getElementsByTagName("p");
+        let elementsP3 = case2Ligne3.item(i).getElementsByTagName("p");
+        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
+            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if (player1Count === 3) {
+                return "Gagnant: joueur 1";
+            }
+            else if (player2Count === 3) {
+                return "Gagnant: joueur 2";
+            }
+        }
+    }
+
+    let case3Ligne1 = ligne1.getElementsByClassName("case3");
+    let case3Ligne2 = ligne2.getElementsByClassName("case3");
+    let case3Ligne3 = ligne3.getElementsByClassName("case3");
+    player1Count = 0;
+    player2Count = 0;
+
+    // Ligne 3 horizontale
+    for (let i = 0; i < case3Ligne1.length && i < case3Ligne2.length && i < case3Ligne3.length; i++) {
+        let elementsP1 = case3Ligne1.item(i).getElementsByTagName("p");
+        let elementsP2 = case3Ligne2.item(i).getElementsByTagName("p");
+        let elementsP3 = case3Ligne3.item(i).getElementsByTagName("p");
+        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
+            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if (player1Count === 3) {
+                return "Gagnant: joueur 1";
+            }
+            else if (player2Count === 3) {
+                return "Gagnant: joueur 2";
+            }
+        }
+    }
+
+    return false;
 }
+
 
 
 // Et en fin on teste les lignes diagonales.
 function verificationDiagonale() {
 
+    //Diagonale de gauche-haut à bas-droite.
+    let caseLigne1 = ligne1.getElementsByClassName("case1");
+    let caseLigne2 = ligne2.getElementsByClassName("case2");
+    let caseLigne3 = ligne3.getElementsByClassName("case3");
+    let player1Count = 0;
+    let player2Count = 0;
+
+    // 1 ère diagonale.
+    for (let i = 0; i < caseLigne1.length && i < caseLigne2.length && i < caseLigne3.length; i++) {
+        let elementsP1 = caseLigne1.item(i).getElementsByTagName("p");
+        let elementsP2 = caseLigne2.item(i).getElementsByTagName("p");
+        let elementsP3 = caseLigne3.item(i).getElementsByTagName("p");
+        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
+            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if (player1Count === 3) {
+                return "Gagnant: joueur 1";
+            }
+            else if (player2Count === 3) {
+                return "Gagnant: joueur 2";
+            }
+        }
+    }
+
+    let case3Ligne1 = ligne1.getElementsByClassName("case3");
+    let case2Ligne2 = ligne2.getElementsByClassName("case2");
+    let case1Ligne3 = ligne3.getElementsByClassName("case1");
+    player1Count = 0;
+    player2Count = 0;
+
+    // Ligne 2 horizontale
+    for (let i = 0; i < case3Ligne1.length && i < case2Ligne2.length && i < case1Ligne3.length; i++) {
+        let elementsP1 = case3Ligne1.item(i).getElementsByTagName("p");
+        let elementsP2 = case2Ligne2.item(i).getElementsByTagName("p");
+        let elementsP3 = case1Ligne3.item(i).getElementsByTagName("p");
+        if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
+            if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP1.item(0).style.backgroundColor === bgPlayer2 && elementsP2.item(0).style.backgroundColor === bgPlayer2 && elementsP3.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if (player1Count === 3) {
+                return "Gagnant: joueur 1";
+            }
+            else if (player2Count === 3) {
+                return "Gagnant: joueur 2";
+            }
+        }
+    }
+
+    return false;
 }
