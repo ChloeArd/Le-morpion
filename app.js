@@ -17,7 +17,7 @@ for (let i = 0; i < allDiv.length; i++) {
     allDiv.item(i).addEventListener("mouseup", function (event) {
         switch(event.button) {
             case 0: //Clique gauche
-                playerOneClick(allDiv.item(i)); // reviens à --> this.
+                playerOneClick(allDiv.item(i)); // revient à --> this.
                 break;
             case 2: //Clique droit
                 playerTwoClick(this);
@@ -273,6 +273,9 @@ function verificationDiagonale() {
             }
         }
     }
-
     return false;
+}
+
+document.getElementById("reset").onclick = function () {
+    location.reload(); // recharge la page ce qui permet de pouvoir rejouer
 }
