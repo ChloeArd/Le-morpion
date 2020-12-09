@@ -12,11 +12,13 @@ html {
 body {
     width: 100%;
     font-family: 'Roboto', sans-serif;
+    background-color: black;
 }
 
 #container {
     background-color: lightgrey;
     width: 70%;
+    height: 800px;
     margin: auto;
     padding: 30px;
 }
@@ -90,3 +92,11 @@ button {
     height: 100px;
 }
 
+#reset {
+    background-color: #26AC34;
+    color: white;
+    width: 150px;
+    height: 20px;
+    margin-left: 420px;
+    margin-top: 30px;
+}
