@@ -68,9 +68,9 @@ function verificationVerticale() {
     let player1Count = 0;
     let player2Count = 0;
 
+    // Ligne 1 verticale
     for(let i = 0; i < casesLigne1.length; i++) {
         let elementsP = casesLigne1.item(i).getElementsByTagName('p');
-        console.log(elementsP);
         if(elementsP.length > 0) {
             if (elementsP.item(0).style.backgroundColor === bgPlayer1) {
                 player1Count++;
@@ -85,17 +85,30 @@ function verificationVerticale() {
             else if (player2Count === 3) {
                 return "player 2";
             }
-            console.log("bgPlayer1: " + bgPlayer1, elementsP.item(0).style.backgroundColor);
         }
     }
 
+    //Ligne 2 verticale
     let casesLigne2 = ligne2.getElementsByTagName('div');
     player1Count = 0;
     player2Count = 0;
 
-
     for (let i = 0; i<  casesLigne2.length; i++) {
-
+        let elementsP = casesLigne2.item(i).getElementsByTagName("p");
+        if(elementsP.length > 0) {
+            if(elementsP.item(0).style.backgroundColor === bgPlayer1) {
+                player1Count++;
+            }
+            else if (elementsP.item(0).style.backgroundColor === bgPlayer2) {
+                player2Count++;
+            }
+            if(player1Count === 3) {
+                return "player 1"; //Sort de la fonction si joueur 1 a gagné
+            }
+            else if (player2Count === 3) {
+                return "player2";
+            }
+        }
     }
 
 
