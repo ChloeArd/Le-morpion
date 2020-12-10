@@ -247,15 +247,14 @@ function verificationDiagonale() {
 
     //Diagonale de bas-gauche à haut-droite.
     let case3Ligne1 = ligne1.getElementsByClassName("case3");
-    let case2Ligne2 = ligne2.getElementsByClassName("case2");
     let case1Ligne3 = ligne3.getElementsByClassName("case1");
     player1Count = 0;
     player2Count = 0;
 
     // 2è diagonale
-    for (let i = 0; i < case3Ligne1.length && i < case2Ligne2.length && i < case1Ligne3.length; i++) {
+    for (let i = 0; i < case3Ligne1.length && i < caseLigne2.length && i < case1Ligne3.length; i++) {
         let elementsP1 = case3Ligne1.item(i).getElementsByTagName("p");
-        let elementsP2 = case2Ligne2.item(i).getElementsByTagName("p");
+        let elementsP2 = caseLigne2.item(i).getElementsByTagName("p");
         let elementsP3 = case1Ligne3.item(i).getElementsByTagName("p");
         if (elementsP1.length > 0 && elementsP2.length > 0 && elementsP3.length > 0) {
             if(elementsP1.item(0).style.backgroundColor === bgPlayer1 && elementsP2.item(0).style.backgroundColor === bgPlayer1 && elementsP3.item(0).style.backgroundColor === bgPlayer1) {
