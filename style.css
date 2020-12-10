@@ -107,7 +107,7 @@ p {
     margin-top: 30px;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1120px) {
     #container {
         width: 100%;
         margin: 0;
@@ -136,8 +136,8 @@ p {
 
 @media screen and (max-width: 450px) {
     .case1, .case2, .case3 {
-        width: 60px;
-        height: 60px;
+        width: 70px;
+        height: 70px;
     }
 
     h1 {
